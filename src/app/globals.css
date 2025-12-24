@@ -24,7 +24,7 @@
   --color-gold-accent: var(--gold-accent);
 }
 
-/* Typography */
+/* Typography - Beauty Industry Fonts */
 html {
   scroll-behavior: smooth;
 }
@@ -32,19 +32,25 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bodoni Moda', 'Didot', 'Georgia', serif;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .font-display {
-  font-family: 'Bodoni Moda', 'Didot', 'Georgia', serif;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 500;
 }
 
 .font-accent {
-  font-family: 'Cormorant', 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-style: italic;
 }
 
 /* Elegant Scrollbar */

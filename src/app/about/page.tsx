@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Award,
   Heart,
   Shield,
-  Users,
   Sparkles,
   CheckCircle,
-  Star,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
@@ -95,11 +94,13 @@ export default function AboutPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative"
             >
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[#D4A5A5]/40 to-[#B76E79]/40 flex items-center justify-center shadow-2xl">
-                <div className="text-center text-white/80">
-                  <Sparkles className="w-20 h-20 mx-auto mb-4" />
-                  <p className="text-xl font-display">Our Clinic</p>
-                </div>
+              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[#D4A5A5]/40 to-[#B76E79]/40 shadow-2xl overflow-hidden relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=750&fit=crop&q=80"
+                  alt="Lumière Aesthetics Clinic Interior"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -226,31 +227,37 @@ export default function AboutPage() {
                 title: "Treatment Suites",
                 description:
                   "Private, spa-like treatment rooms equipped with the latest technology.",
+                image: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&h=300&fit=crop&q=80",
               },
               {
                 title: "Consultation Rooms",
                 description:
                   "Comfortable spaces for in-depth discussions about your goals.",
+                image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&h=300&fit=crop&q=80",
               },
               {
                 title: "Recovery Lounge",
                 description:
                   "Peaceful post-treatment relaxation area with refreshments.",
+                image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400&h=300&fit=crop&q=80",
               },
               {
                 title: "Laser Center",
                 description:
                   "Dedicated suite housing our advanced laser technologies.",
+                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop&q=80",
               },
               {
                 title: "Skincare Boutique",
                 description:
                   "Curated selection of medical-grade skincare products.",
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop&q=80",
               },
               {
                 title: "Virtual Suite",
                 description:
                   "High-tech room for virtual consultations and telemedicine.",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&q=80",
               },
             ].map((facility, index) => (
               <motion.div
@@ -261,8 +268,13 @@ export default function AboutPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-[#FFFFF0] rounded-2xl p-6"
               >
-                <div className="aspect-video rounded-xl bg-gradient-to-br from-[#D4A5A5]/20 to-[#B76E79]/20 flex items-center justify-center mb-4">
-                  <Sparkles className="w-10 h-10 text-[#B76E79]/40" />
+                <div className="aspect-video rounded-xl overflow-hidden relative mb-4">
+                  <Image
+                    src={facility.image}
+                    alt={facility.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-display font-semibold text-[#2C2C2C] mb-2">
                   {facility.title}

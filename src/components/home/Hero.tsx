@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Star, Users, CheckCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -91,7 +92,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Hero Image Placeholder */}
+          {/* Right Content - Hero Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -104,14 +105,16 @@ export default function Hero() {
               <div className="absolute -top-8 -right-8 w-32 h-32 bg-[#D4A5A5]/30 rounded-full blur-xl" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-[#9DC183]/30 rounded-full blur-xl" />
 
-              {/* Image Placeholder */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#D4A5A5]/40 to-[#B76E79]/40 aspect-[4/5]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white/80">
-                    <Sparkles className="w-20 h-20 mx-auto mb-4" />
-                    <p className="text-lg font-display">Beautiful Results</p>
-                  </div>
-                </div>
+              {/* Hero Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
+                <Image
+                  src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=1000&fit=crop&q=80"
+                  alt="Beautiful woman with glowing skin"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#B76E79]/20 to-transparent" />
 
                 {/* Floating Stats Card */}
                 <motion.div
@@ -164,7 +167,7 @@ export default function Hero() {
           transition={{ delay: 0.9 }}
           className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0"
         >
-          {trustBadges.map((badge, i) => (
+          {trustBadges.map((badge) => (
             <div key={badge.label} className="text-center lg:text-left">
               <badge.icon className="w-8 h-8 text-[#B76E79] mx-auto lg:mx-0 mb-2" />
               <p className="text-xl font-bold text-[#2C2C2C]">{badge.label}</p>

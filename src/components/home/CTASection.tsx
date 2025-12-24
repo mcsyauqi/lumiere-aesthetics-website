@@ -53,7 +53,7 @@ export default function CTASection() {
               <Button
                 variant="secondary"
                 size="lg"
-                className="bg-white text-[#B76E79] hover:bg-[#FFFFF0]"
+                className="!bg-white !text-[#B76E79] hover:!bg-[#FFFFF0]"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your Glow

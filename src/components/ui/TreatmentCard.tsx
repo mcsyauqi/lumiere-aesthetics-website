@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Sparkles } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Treatment } from "@/data/treatments";
 import { formatPrice } from "@/lib/utils";
 
@@ -26,11 +26,14 @@ export default function TreatmentCard({
       <Link href={`/treatments/${treatment.slug}`}>
         <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 card-hover">
           {/* Image Container */}
-          <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#D4A5A5]/20 to-[#B76E79]/20">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Sparkles className="w-16 h-16 text-[#B76E79]/30" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative h-56 overflow-hidden">
+            <Image
+              src={treatment.image}
+              alt={treatment.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Featured Badge */}
             {treatment.featured && (

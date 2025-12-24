@@ -88,7 +88,7 @@ export const treatments: Treatment[] = [
     recovery: "None",
     sessions: "Monthly maintenance recommended",
     price: 250,
-    image: "/images/treatments/hydrafacial.jpg",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop&q=80",
     featured: true,
   },
   {
@@ -112,7 +112,7 @@ export const treatments: Treatment[] = [
     sessions: "Every 3-4 months",
     price: 400,
     priceRange: "$400 - $800",
-    image: "/images/treatments/botox.jpg",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop&q=80",
     featured: true,
   },
   {
@@ -136,7 +136,7 @@ export const treatments: Treatment[] = [
     sessions: "Annual touch-ups",
     price: 700,
     priceRange: "$700 - $2,000",
-    image: "/images/treatments/fillers.jpg",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop&q=80",
     featured: true,
   },
   {
@@ -160,7 +160,7 @@ export const treatments: Treatment[] = [
     sessions: "1-3 treatments",
     price: 1500,
     priceRange: "$1,500 - $4,000",
-    image: "/images/treatments/laser.jpg",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop&q=80",
     featured: true,
   },
   {
@@ -183,7 +183,7 @@ export const treatments: Treatment[] = [
     recovery: "2-3 days redness",
     sessions: "3-6 treatments",
     price: 500,
-    image: "/images/treatments/microneedling.jpg",
+    image: "https://images.unsplash.com/photo-1598524374912-6b0b0bfe9c40?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "6",
@@ -206,7 +206,7 @@ export const treatments: Treatment[] = [
     sessions: "1-2 treatments per area",
     price: 750,
     priceRange: "$750 - $1,500 per area",
-    image: "/images/treatments/coolsculpting.jpg",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "7",
@@ -229,7 +229,7 @@ export const treatments: Treatment[] = [
     sessions: "Series of 3-6",
     price: 200,
     priceRange: "$200 - $600",
-    image: "/images/treatments/peel.jpg",
+    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "8",
@@ -251,7 +251,7 @@ export const treatments: Treatment[] = [
     recovery: "1-2 days swelling",
     sessions: "Touch-ups every 6-12 months",
     price: 600,
-    image: "/images/treatments/lips.jpg",
+    image: "https://images.unsplash.com/photo-1588528402605-4e73af397a09?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "9",
@@ -274,7 +274,7 @@ export const treatments: Treatment[] = [
     sessions: "6-8 treatments",
     price: 200,
     priceRange: "$200 - $500 per session",
-    image: "/images/treatments/laser-hair.jpg",
+    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "10",
@@ -296,7 +296,7 @@ export const treatments: Treatment[] = [
     recovery: "1-2 days",
     sessions: "3-4 treatments",
     price: 800,
-    image: "/images/treatments/prp.jpg",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "11",
@@ -318,7 +318,7 @@ export const treatments: Treatment[] = [
     recovery: "Varies by treatment",
     sessions: "Monthly sessions",
     price: 300,
-    image: "/images/treatments/acne.jpg",
+    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&q=80",
   },
   {
     id: "12",
@@ -340,7 +340,7 @@ export const treatments: Treatment[] = [
     recovery: "1-2 weeks swelling",
     sessions: "2-4 treatments",
     price: 1200,
-    image: "/images/treatments/kybella.jpg",
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&q=80",
   },
 ];
 

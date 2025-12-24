@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, ArrowRight, User } from "lucide-react";
+import { Award, ArrowRight } from "lucide-react";
 import { Doctor } from "@/data/doctors";
 
 interface DoctorCardProps {
@@ -22,9 +23,12 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
         <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 card-hover">
           {/* Image Container */}
           <div className="relative h-72 overflow-hidden bg-gradient-to-br from-[#D4A5A5]/20 to-[#9DC183]/20">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <User className="w-24 h-24 text-[#B76E79]/30" />
-            </div>
+            <Image
+              src={doctor.image}
+              alt={doctor.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/80 to-transparent" />
 
             {/* Credentials Badge */}

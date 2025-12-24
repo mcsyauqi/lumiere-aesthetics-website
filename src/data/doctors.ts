@@ -29,7 +29,7 @@ export const doctors: Doctor[] = [
     bio: "Dr. Sophia Laurent is a board-certified dermatologist with over 15 years of experience in cosmetic and medical dermatology. As the founder and Medical Director of Lumière Aesthetics, she brings her passion for combining artistry with medical expertise to help patients achieve their aesthetic goals. Dr. Laurent completed her dermatology residency at Stanford University and has trained extensively in the latest non-surgical cosmetic procedures in Paris and New York.",
     shortBio:
       "Board-certified dermatologist with 15+ years of experience in cosmetic and medical dermatology.",
-    image: "/images/doctors/dr-laurent.jpg",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&q=80",
     expertise: [
       "Injectable Treatments",
       "Laser Therapy",
@@ -58,7 +58,7 @@ export const doctors: Doctor[] = [
     bio: "Dr. James Chen is a double board-certified plastic surgeon specializing in non-surgical facial rejuvenation. Known for his artistic eye and precision technique, Dr. Chen has performed over 10,000 injectable procedures. He regularly trains other physicians in advanced injection techniques and speaks at international aesthetic medicine conferences.",
     shortBio:
       "Double board-certified plastic surgeon specializing in non-surgical facial rejuvenation.",
-    image: "/images/doctors/dr-chen.jpg",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&q=80",
     expertise: [
       "Dermal Fillers",
       "Botox & Neuromodulators",
@@ -87,7 +87,7 @@ export const doctors: Doctor[] = [
     bio: "Dr. Elena Rodriguez is a board-certified dermatologist with expertise in laser medicine and skin rejuvenation. She has pioneered several combination protocols that maximize results while minimizing downtime. Dr. Rodriguez is passionate about treating all skin types and has developed specialized approaches for patients with diverse skin tones.",
     shortBio:
       "Board-certified dermatologist with expertise in laser medicine and skin rejuvenation.",
-    image: "/images/doctors/dr-rodriguez.jpg",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop&q=80",
     expertise: [
       "Laser Skin Resurfacing",
       "Pigmentation Treatment",
@@ -116,7 +116,7 @@ export const doctors: Doctor[] = [
     bio: "Dr. Michael Brooks specializes in non-invasive body contouring and weight management. With a background in internal medicine, he takes a holistic approach to body aesthetics, combining cutting-edge technology with lifestyle optimization. Dr. Brooks has helped hundreds of patients achieve their body goals without surgery.",
     shortBio:
       "Specialist in non-invasive body contouring with a holistic approach to aesthetics.",
-    image: "/images/doctors/dr-brooks.jpg",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&q=80",
     expertise: [
       "CoolSculpting",
       "EMSculpt",

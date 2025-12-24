@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MoveHorizontal } from "lucide-react";
 
 interface BeforeAfterSliderProps {
   beforeLabel?: string;
   afterLabel?: string;
+  beforeImage?: string;
+  afterImage?: string;
   treatmentName: string;
   sessions?: string;
 }
@@ -14,6 +17,8 @@ interface BeforeAfterSliderProps {
 export default function BeforeAfterSlider({
   beforeLabel = "Before",
   afterLabel = "After",
+  beforeImage = "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&h=800&fit=crop&q=80",
+  afterImage = "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop&q=80",
   treatmentName,
   sessions,
 }: BeforeAfterSliderProps) {
@@ -70,24 +75,26 @@ export default function BeforeAfterSlider({
         onTouchStart={() => setIsDragging(true)}
       >
         {/* Before Image (Background) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#D4A5A5]/30 to-[#D4A5A5]/10">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[#B76E79]/30 text-6xl font-display">
-              Before
-            </span>
-          </div>
+        <div className="absolute inset-0">
+          <Image
+            src={beforeImage}
+            alt="Before treatment"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* After Image (Foreground with clip) */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#9DC183]/30 to-[#9DC183]/10"
+          className="absolute inset-0"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[#9DC183]/50 text-6xl font-display">
-              After
-            </span>
-          </div>
+          <Image
+            src={afterImage}
+            alt="After treatment"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Slider Line */}

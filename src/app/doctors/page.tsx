@@ -1,12 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Award,
   GraduationCap,
   Globe,
   CheckCircle,
-  User,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { doctors } from "@/data/doctors";
@@ -55,11 +55,13 @@ export default function DoctorsPage() {
                 <div
                   className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}
                 >
-                  <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[#D4A5A5]/40 to-[#B76E79]/40 flex items-center justify-center shadow-2xl overflow-hidden">
-                    <div className="text-center text-white/80">
-                      <User className="w-32 h-32 mx-auto mb-4" />
-                      <p className="text-xl font-display">{doctor.name}</p>
-                    </div>
+                  <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[#D4A5A5]/40 to-[#B76E79]/40 shadow-2xl overflow-hidden relative">
+                    <Image
+                      src={doctor.image}
+                      alt={doctor.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
 
                   {/* Floating Badge */}

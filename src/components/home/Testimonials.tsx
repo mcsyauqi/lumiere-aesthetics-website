@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -10,7 +11,7 @@ const testimonials = [
     id: 1,
     name: "Sarah Mitchell",
     role: "Marketing Executive",
-    image: null,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "HydraFacial & Botox",
     text: "The results exceeded my expectations. Dr. Laurent took the time to understand my concerns and created a personalized treatment plan. My skin has never looked better, and I feel so much more confident!",
@@ -19,7 +20,7 @@ const testimonials = [
     id: 2,
     name: "Jennifer Adams",
     role: "Entrepreneur",
-    image: null,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "Dermal Fillers",
     text: "I was nervous about getting fillers, but the team at Lumière made me feel completely at ease. The results are so natural - people keep asking if I've been on vacation because I look so refreshed!",
@@ -28,7 +29,7 @@ const testimonials = [
     id: 3,
     name: "Emily Chen",
     role: "Attorney",
-    image: null,
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "Laser Skin Resurfacing",
     text: "After struggling with acne scars for years, I finally found a solution. The laser treatments have transformed my skin texture completely. The staff is professional, and the clinic is absolutely beautiful.",
@@ -37,7 +38,7 @@ const testimonials = [
     id: 4,
     name: "Amanda Rodriguez",
     role: "Bride-to-be",
-    image: null,
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "Bridal Glow Package",
     text: "I wanted to look my absolute best for my wedding, and Lumière delivered beyond my dreams. The customized treatment plan gave me the perfect bridal glow. Worth every penny!",
@@ -98,8 +99,13 @@ export default function Testimonials() {
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#D4A5A5] to-[#B76E79] rounded-full flex items-center justify-center text-white text-xl font-semibold">
-                    {testimonials[currentIndex].name.charAt(0)}
+                  <div className="w-14 h-14 rounded-full overflow-hidden relative">
+                    <Image
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-[#2C2C2C]">
