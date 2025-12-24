@@ -7,24 +7,24 @@ import { Menu, X, ChevronDown, Phone, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Beranda" },
   {
     href: "/treatments",
-    label: "Treatments",
+    label: "Perawatan",
     dropdown: [
-      { href: "/treatments#facial-rejuvenation", label: "Facial Rejuvenation" },
-      { href: "/treatments#body-contouring", label: "Body Contouring" },
-      { href: "/treatments#skin-treatments", label: "Skin Treatments" },
-      { href: "/treatments#injectables", label: "Injectables" },
-      { href: "/treatments#laser-therapy", label: "Laser Therapy" },
+      { href: "/treatments#facial-rejuvenation", label: "Peremajaan Wajah" },
+      { href: "/treatments#body-contouring", label: "Pembentukan Tubuh" },
+      { href: "/treatments#skin-treatments", label: "Perawatan Kulit" },
+      { href: "/treatments#injectables", label: "Suntik Estetika" },
+      { href: "/treatments#laser-therapy", label: "Terapi Laser" },
     ],
   },
-  { href: "/doctors", label: "Our Doctors" },
-  { href: "/before-after", label: "Results" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
+  { href: "/doctors", label: "Dokter Kami" },
+  { href: "/before-after", label: "Hasil" },
+  { href: "/pricing", label: "Harga" },
+  { href: "/about", label: "Tentang Kami" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Kontak" },
 ];
 
 export default function Navbar() {
@@ -54,14 +54,14 @@ export default function Navbar() {
               <span>(123) 456-7890</span>
             </a>
             <span className="text-[#D4A5A5]">|</span>
-            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+            <span>Sen - Sab: 09:00 - 19:00</span>
           </div>
           <Link
             href="/booking"
             className="flex items-center gap-2 hover:text-[#D4A5A5] transition-colors"
           >
             <Calendar size={14} />
-            <span>Book Online</span>
+            <span>Reservasi Online</span>
           </Link>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function Navbar() {
                 href="/booking"
                 className="btn-primary px-6 py-3 rounded-full text-sm font-semibold"
               >
-                Book Consultation
+                Reservasi Konsultasi
               </Link>
             </div>
 
@@ -196,7 +196,7 @@ export default function Navbar() {
                   className="block btn-primary px-6 py-3 rounded-full text-center text-sm font-semibold mt-4"
                   onClick={() => setIsOpen(false)}
                 >
-                  Book Consultation
+                  Reservasi Konsultasi
                 </Link>
               </div>
             </motion.div>

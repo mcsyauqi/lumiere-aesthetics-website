@@ -8,45 +8,45 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const categories = [
   {
     id: "facial-rejuvenation",
-    name: "Facial Rejuvenation",
+    name: "Peremajaan Wajah",
     description:
-      "Turn back time with advanced treatments that restore youthful radiance.",
+      "Kembalikan waktu dengan perawatan canggih yang mengembalikan kecemerlangan awet muda.",
     icon: Sparkles,
     color: "from-[#D4A5A5] to-[#B76E79]",
     treatments: ["HydraFacial", "Microneedling", "Chemical Peels"],
   },
   {
     id: "body-contouring",
-    name: "Body Contouring",
+    name: "Pembentukan Tubuh",
     description:
-      "Sculpt your silhouette with non-invasive body shaping technologies.",
+      "Bentuk siluet tubuh Anda dengan teknologi pembentukan non-invasif.",
     icon: Activity,
     color: "from-[#9DC183] to-[#7BA35A]",
     treatments: ["CoolSculpting", "EMSculpt", "VelaShape"],
   },
   {
     id: "skin-treatments",
-    name: "Skin Treatments",
+    name: "Perawatan Kulit",
     description:
-      "Address specific skin concerns with targeted, results-driven treatments.",
+      "Atasi masalah kulit spesifik dengan perawatan yang tepat sasaran.",
     icon: Droplet,
     color: "from-[#87CEEB] to-[#5F9EA0]",
-    treatments: ["Acne Treatment", "Pigmentation", "Rosacea Care"],
+    treatments: ["Perawatan Jerawat", "Pigmentasi", "Perawatan Rosacea"],
   },
   {
     id: "injectables",
-    name: "Injectables",
+    name: "Suntik Estetika",
     description:
-      "Enhance your natural beauty with expertly administered treatments.",
+      "Tingkatkan kecantikan alami Anda dengan perawatan yang dilakukan ahli.",
     icon: Syringe,
     color: "from-[#B76E79] to-[#9C4A5B]",
     treatments: ["Botox", "Dermal Fillers", "Lip Enhancement"],
   },
   {
     id: "laser-therapy",
-    name: "Laser Therapy",
+    name: "Terapi Laser",
     description:
-      "Harness light technology for resurfacing, hair removal, and more.",
+      "Manfaatkan teknologi cahaya untuk peremajaan kulit, hair removal, dan lainnya.",
     icon: Zap,
     color: "from-[#C9B037] to-[#A69028]",
     treatments: ["Laser Resurfacing", "Hair Removal", "IPL"],
@@ -58,9 +58,9 @@ export default function TreatmentCategories() {
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          subtitle="Our Services"
-          title="Treatment Categories"
-          description="Discover our comprehensive range of aesthetic treatments tailored to your unique beauty goals."
+          subtitle="Layanan Kami"
+          title="Kategori Perawatan"
+          description="Temukan berbagai perawatan estetika lengkap yang disesuaikan dengan tujuan kecantikan unik Anda."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,7 +108,7 @@ export default function TreatmentCategories() {
 
                   {/* Learn More Link */}
                   <span className="relative flex items-center gap-2 text-sm font-medium text-[#B76E79] group-hover:gap-3 transition-all">
-                    Explore Treatments
+                    Lihat Perawatan
                     <ArrowRight size={16} />
                   </span>
                 </div>

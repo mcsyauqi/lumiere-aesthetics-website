@@ -9,39 +9,39 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Mitchell",
+    name: "Sari Wulandari",
     role: "Marketing Executive",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "HydraFacial & Botox",
-    text: "The results exceeded my expectations. Dr. Laurent took the time to understand my concerns and created a personalized treatment plan. My skin has never looked better, and I feel so much more confident!",
+    text: "Hasilnya melebihi ekspektasi saya. Dr. Laurent meluangkan waktu untuk memahami kekhawatiran saya dan membuat rencana perawatan yang personal. Kulit saya belum pernah terlihat sebaik ini, dan saya merasa jauh lebih percaya diri!",
   },
   {
     id: 2,
-    name: "Jennifer Adams",
-    role: "Entrepreneur",
+    name: "Jennifer Susanto",
+    role: "Pengusaha",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "Dermal Fillers",
-    text: "I was nervous about getting fillers, but the team at Lumière made me feel completely at ease. The results are so natural - people keep asking if I've been on vacation because I look so refreshed!",
+    text: "Saya awalnya gugup untuk melakukan filler, tapi tim di Lumière membuat saya merasa sangat nyaman. Hasilnya sangat natural - orang-orang terus bertanya apakah saya habis liburan karena terlihat sangat segar!",
   },
   {
     id: 3,
     name: "Emily Chen",
-    role: "Attorney",
+    role: "Pengacara",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&q=80",
     rating: 5,
     treatment: "Laser Skin Resurfacing",
-    text: "After struggling with acne scars for years, I finally found a solution. The laser treatments have transformed my skin texture completely. The staff is professional, and the clinic is absolutely beautiful.",
+    text: "Setelah bertahun-tahun berjuang dengan bekas jerawat, akhirnya saya menemukan solusinya. Perawatan laser telah mengubah tekstur kulit saya sepenuhnya. Stafnya profesional, dan kliniknya sangat indah.",
   },
   {
     id: 4,
-    name: "Amanda Rodriguez",
-    role: "Bride-to-be",
+    name: "Amanda Putri",
+    role: "Calon Pengantin",
     image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&q=80",
     rating: 5,
-    treatment: "Bridal Glow Package",
-    text: "I wanted to look my absolute best for my wedding, and Lumière delivered beyond my dreams. The customized treatment plan gave me the perfect bridal glow. Worth every penny!",
+    treatment: "Paket Bridal Glow",
+    text: "Saya ingin tampil terbaik untuk pernikahan saya, dan Lumière memberikan hasil melebihi impian saya. Rencana perawatan yang disesuaikan memberi saya bridal glow yang sempurna. Sangat worth it!",
   },
 ];
 
@@ -62,9 +62,9 @@ export default function Testimonials() {
     <section className="section-padding bg-gradient-to-br from-[#D4A5A5]/10 to-[#B76E79]/10">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          subtitle="Client Stories"
-          title="What Our Clients Say"
-          description="Real experiences from real clients who have transformed their confidence with our treatments."
+          subtitle="Cerita Klien"
+          title="Apa Kata Klien Kami"
+          description="Pengalaman nyata dari klien yang telah mentransformasi kepercayaan diri mereka dengan perawatan kami."
         />
 
         <div className="relative max-w-4xl mx-auto">

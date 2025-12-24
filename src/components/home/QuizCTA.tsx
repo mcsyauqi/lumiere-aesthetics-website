@@ -23,25 +23,25 @@ export default function QuizCTA() {
               <div className="inline-flex items-center gap-2 bg-[#B76E79]/10 rounded-full px-4 py-2 mb-6">
                 <ClipboardCheck className="w-4 h-4 text-[#B76E79]" />
                 <span className="text-sm font-medium text-[#B76E79]">
-                  Free Assessment
+                  Penilaian Gratis
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-display font-bold text-[#2C2C2C] mb-6">
-                Not Sure Which Treatment is Right for You?
+                Bingung Perawatan Mana yang Cocok untuk Anda?
               </h2>
 
               <p className="text-lg text-[#2C2C2C]/70 mb-8">
-                Take our personalized skin assessment quiz and receive tailored
-                treatment recommendations based on your unique skin concerns,
-                goals, and lifestyle.
+                Ikuti kuis penilaian kulit personal kami dan dapatkan rekomendasi
+                perawatan yang disesuaikan dengan masalah kulit, tujuan, dan gaya
+                hidup Anda.
               </p>
 
               <div className="space-y-4 mb-8">
                 {[
-                  "5 quick questions - takes less than 2 minutes",
-                  "Get personalized treatment recommendations",
-                  "Receive exclusive offers on recommended treatments",
+                  "5 pertanyaan singkat - kurang dari 2 menit",
+                  "Dapatkan rekomendasi perawatan personal",
+                  "Terima penawaran eksklusif untuk perawatan yang direkomendasikan",
                 ].map((point, i) => (
                   <motion.div
                     key={point}
@@ -61,7 +61,7 @@ export default function QuizCTA() {
 
               <Button size="lg" onClick={() => setIsQuizOpen(true)}>
                 <Sparkles className="w-5 h-5 mr-2" />
-                Start Your Skin Assessment
+                Mulai Penilaian Kulit Anda
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>
@@ -85,26 +85,26 @@ export default function QuizCTA() {
                       <ClipboardCheck className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-xl font-display font-semibold text-[#2C2C2C]">
-                      Skin Assessment Quiz
+                      Kuis Penilaian Kulit
                     </h3>
                     <p className="text-[#2C2C2C]/60 text-sm mt-2">
-                      Discover your perfect treatment match
+                      Temukan perawatan yang cocok untuk Anda
                     </p>
                   </div>
 
                   {/* Sample Question Preview */}
                   <div className="bg-[#FFFFF0] rounded-xl p-6">
                     <p className="text-sm text-[#2C2C2C]/60 mb-2">
-                      Sample Question
+                      Contoh Pertanyaan
                     </p>
                     <p className="font-semibold text-[#2C2C2C] mb-4">
-                      What is your primary skin concern?
+                      Apa masalah kulit utama Anda?
                     </p>
                     <div className="space-y-2">
                       {[
-                        "Fine lines & wrinkles",
-                        "Acne & breakouts",
-                        "Dark spots",
+                        "Garis halus & kerutan",
+                        "Jerawat & breakout",
+                        "Flek hitam",
                       ].map((option) => (
                         <div
                           key={option}
@@ -122,13 +122,13 @@ export default function QuizCTA() {
                   {/* Stats */}
                   <div className="flex justify-center gap-8 mt-6 pt-6 border-t border-[#D4A5A5]/20">
                     <div className="text-center">
-                      <p className="text-2xl font-bold text-[#B76E79]">5,000+</p>
-                      <p className="text-xs text-[#2C2C2C]/60">Quiz Completed</p>
+                      <p className="text-2xl font-bold text-[#B76E79]">5.000+</p>
+                      <p className="text-xs text-[#2C2C2C]/60">Kuis Selesai</p>
                     </div>
                     <div className="text-center">
                       <p className="text-2xl font-bold text-[#B76E79]">98%</p>
                       <p className="text-xs text-[#2C2C2C]/60">
-                        Found Their Match
+                        Menemukan Cocok
                       </p>
                     </div>
                   </div>

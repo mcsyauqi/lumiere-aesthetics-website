@@ -7,8 +7,8 @@ import { Sparkles, Award, Star, Users, CheckCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 const trustBadges = [
-  { icon: Award, label: "Board Certified", value: "Dermatologists" },
-  { icon: Users, label: "10,000+", value: "Treatments" },
+  { icon: Award, label: "Tersertifikasi", value: "Dokter Kulit" },
+  { icon: Users, label: "10.000+", value: "Perawatan" },
   { icon: Star, label: "4.9", value: "Rating" },
 ];
 
@@ -38,28 +38,28 @@ export default function Hero() {
             >
               <Sparkles className="w-4 h-4 text-[#B76E79]" />
               <span className="text-sm font-medium text-[#B76E79]">
-                Where Science Meets Beauty
+                Perpaduan Sains dan Kecantikan
               </span>
             </motion.div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#2C2C2C] leading-tight mb-6">
-              Reveal Your{" "}
-              <span className="text-[#B76E79]">Natural Radiance</span>
+              Tampilkan{" "}
+              <span className="text-[#B76E79]">Pesona Alami Anda</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-[#2C2C2C]/70 mb-8 max-w-lg">
-              Advanced aesthetic treatments by board-certified dermatologists.
-              Experience transformative results with our FDA-approved procedures.
+              Perawatan estetika canggih oleh dokter kulit tersertifikasi.
+              Rasakan transformasi luar biasa dengan prosedur berstandar internasional.
             </p>
 
             {/* Trust Points */}
             <div className="space-y-3 mb-8">
               {[
-                "Board-certified dermatologists",
-                "FDA-approved treatments",
-                "Visible, natural-looking results",
+                "Dokter kulit tersertifikasi",
+                "Perawatan berstandar internasional",
+                "Hasil natural dan terlihat nyata",
               ].map((point, i) => (
                 <motion.div
                   key={point}
@@ -82,11 +82,11 @@ export default function Hero() {
               className="flex flex-wrap gap-4"
             >
               <Link href="/booking">
-                <Button size="lg">Book Consultation</Button>
+                <Button size="lg">Reservasi Konsultasi</Button>
               </Link>
               <Link href="/treatments">
                 <Button variant="outline" size="lg">
-                  View Treatments
+                  Lihat Perawatan
                 </Button>
               </Link>
             </motion.div>
@@ -109,7 +109,7 @@ export default function Hero() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
                 <Image
                   src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=1000&fit=crop&q=80"
-                  alt="Beautiful woman with glowing skin"
+                  alt="Wanita cantik dengan kulit bercahaya"
                   fill
                   className="object-cover"
                   priority
@@ -130,7 +130,7 @@ export default function Hero() {
                     <div>
                       <p className="text-2xl font-bold text-[#2C2C2C]">98%</p>
                       <p className="text-sm text-[#2C2C2C]/60">
-                        Client Satisfaction
+                        Kepuasan Klien
                       </p>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function Hero() {
                     <div>
                       <p className="text-lg font-bold text-[#2C2C2C]">15+</p>
                       <p className="text-sm text-[#2C2C2C]/60">
-                        Years Experience
+                        Tahun Pengalaman
                       </p>
                     </div>
                   </div>

@@ -34,7 +34,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
             {/* Credentials Badge */}
             <div className="absolute top-4 right-4 bg-[#9DC183] text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
               <Award size={12} />
-              Board Certified
+              Tersertifikasi
             </div>
 
             {/* Info Overlay */}
@@ -66,7 +66,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
 
             {/* View Profile Link */}
             <span className="flex items-center gap-1 text-sm text-[#B76E79] font-medium group-hover:gap-2 transition-all">
-              View Full Profile
+              Lihat Profil Lengkap
               <ArrowRight size={14} />
             </span>
           </div>

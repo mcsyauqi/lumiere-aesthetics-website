@@ -15,9 +15,9 @@ export default function DoctorsSection() {
     <section className="section-padding bg-[#FFFFF0]">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          subtitle="Expert Care"
-          title="Meet Our Specialists"
-          description="Our board-certified dermatologists and aesthetic specialists bring decades of combined experience to help you achieve your beauty goals."
+          subtitle="Perawatan Ahli"
+          title="Kenali Spesialis Kami"
+          description="Dokter kulit dan spesialis estetika tersertifikasi kami membawa pengalaman puluhan tahun untuk membantu Anda mencapai tujuan kecantikan."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -35,7 +35,7 @@ export default function DoctorsSection() {
         >
           <Link href="/doctors">
             <Button variant="outline" size="lg">
-              View All Doctors
+              Lihat Semua Dokter
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>

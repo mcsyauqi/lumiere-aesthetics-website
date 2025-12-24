@@ -40,12 +40,11 @@ export default function CTASection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-            Ready to Start Your Transformation?
+            Siap Memulai Transformasi Anda?
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Book your complimentary consultation today and discover the
-            personalized treatment plan that will help you achieve your beauty
-            goals.
+            Reservasi konsultasi gratis hari ini dan temukan rencana perawatan
+            personal yang akan membantu Anda mencapai tujuan kecantikan.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -56,25 +55,25 @@ export default function CTASection() {
                 className="!bg-white !text-[#B76E79] hover:!bg-[#FFFFF0]"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book Your Glow
+                Reservasi Sekarang
               </Button>
             </Link>
-            <a href="tel:+1234567890">
+            <a href="tel:+6281234567890">
               <Button
                 variant="outline"
                 size="lg"
                 className="border-white text-white hover:bg-white/20"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                (123) 456-7890
+                +62 812-3456-7890
               </Button>
             </a>
           </div>
 
           {/* Trust Note */}
           <p className="mt-8 text-sm text-white/70">
-            Free consultation &bull; No obligation &bull; Virtual options
-            available
+            Konsultasi gratis &bull; Tanpa kewajiban &bull; Tersedia konsultasi
+            virtual
           </p>
         </motion.div>
       </div>

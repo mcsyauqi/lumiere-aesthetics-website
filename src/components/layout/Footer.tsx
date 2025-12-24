@@ -21,18 +21,18 @@ const footerLinks = {
     { href: "/treatments/coolsculpting", label: "CoolSculpting" },
   ],
   company: [
-    { href: "/about", label: "About Us" },
-    { href: "/doctors", label: "Our Doctors" },
-    { href: "/before-after", label: "Results Gallery" },
+    { href: "/about", label: "Tentang Kami" },
+    { href: "/doctors", label: "Dokter Kami" },
+    { href: "/before-after", label: "Galeri Hasil" },
     { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Kontak" },
   ],
   support: [
-    { href: "/booking", label: "Book Appointment" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/faq", label: "FAQs" },
-    { href: "/financing", label: "Financing Options" },
-    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/booking", label: "Reservasi" },
+    { href: "/pricing", label: "Harga" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/financing", label: "Opsi Cicilan" },
+    { href: "/privacy", label: "Kebijakan Privasi" },
   ],
 };
 
@@ -58,9 +58,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-sm">
-              Where science meets beauty. Advanced aesthetic treatments by
-              board-certified dermatologists for transformative, natural-looking
-              results.
+              Perpaduan sains dan kecantikan. Perawatan estetika canggih oleh
+              dokter kulit tersertifikasi untuk hasil transformatif dan natural.
             </p>
 
             {/* Contact Info */}
@@ -71,17 +70,17 @@ export default function Footer() {
               >
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
                 <span>
-                  123 Aesthetic Avenue, Suite 500
+                  Jl. Kemang Raya No. 123
                   <br />
-                  Beverly Hills, CA 90210
+                  Jakarta Selatan, 12730
                 </span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+6281234567890"
                 className="flex items-center gap-3 text-gray-400 hover:text-[#D4A5A5] transition-colors"
               >
                 <Phone size={18} />
-                <span>(123) 456-7890</span>
+                <span>+62 812-3456-7890</span>
               </a>
               <a
                 href="mailto:info@lumiere-aesthetics.com"
@@ -92,7 +91,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-3 text-gray-400">
                 <Clock size={18} />
-                <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                <span>Sen - Sab: 09:00 - 19:00</span>
               </div>
             </div>
           </div>
@@ -100,7 +99,7 @@ export default function Footer() {
           {/* Treatments */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-[#D4A5A5]">
-              Treatments
+              Perawatan
             </h3>
             <ul className="space-y-3">
               {footerLinks.treatments.map((link) => (
@@ -119,7 +118,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-[#D4A5A5]">
-              Company
+              Perusahaan
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -138,7 +137,7 @@ export default function Footer() {
           {/* Support */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-[#D4A5A5]">
-              Support
+              Layanan
             </h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
@@ -160,10 +159,22 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Lumière Aesthetics. All rights
-              reserved.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} Lumière Aesthetics. Hak Cipta Dilindungi.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Created by{" "}
+                <a
+                  href="https://creativism.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4A5A5] hover:text-[#B76E79] transition-colors"
+                >
+                  Creativism Digital Marketing
+                </a>
+              </p>
+            </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4">
@@ -184,10 +195,10 @@ export default function Footer() {
             {/* Trust Badges */}
             <div className="flex items-center gap-4 text-sm text-gray-400">
               <span className="flex items-center gap-1">
-                <span className="text-[#9DC183]">✓</span> HIPAA Compliant
+                <span className="text-[#9DC183]">✓</span> Tersertifikasi
               </span>
               <span className="flex items-center gap-1">
-                <span className="text-[#9DC183]">✓</span> Board Certified
+                <span className="text-[#9DC183]">✓</span> Terpercaya
               </span>
             </div>
           </div>

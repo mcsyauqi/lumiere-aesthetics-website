@@ -15,8 +15,8 @@ interface BeforeAfterSliderProps {
 }
 
 export default function BeforeAfterSlider({
-  beforeLabel = "Before",
-  afterLabel = "After",
+  beforeLabel = "Sebelum",
+  afterLabel = "Sesudah",
   beforeImage = "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&h=800&fit=crop&q=80",
   afterImage = "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop&q=80",
   treatmentName,
@@ -78,7 +78,7 @@ export default function BeforeAfterSlider({
         <div className="absolute inset-0">
           <Image
             src={beforeImage}
-            alt="Before treatment"
+            alt="Sebelum perawatan"
             fill
             className="object-cover"
           />
@@ -91,7 +91,7 @@ export default function BeforeAfterSlider({
         >
           <Image
             src={afterImage}
-            alt="After treatment"
+            alt="Sesudah perawatan"
             fill
             className="object-cover"
           />
@@ -122,10 +122,10 @@ export default function BeforeAfterSlider({
         <div>
           <h4 className="font-semibold">{treatmentName}</h4>
           {sessions && (
-            <p className="text-sm text-gray-400">{sessions} sessions</p>
+            <p className="text-sm text-gray-400">{sessions} sesi</p>
           )}
         </div>
-        <span className="text-[#D4A5A5] text-sm">Drag to compare</span>
+        <span className="text-[#D4A5A5] text-sm">Geser untuk bandingkan</span>
       </div>
     </motion.div>
   );
