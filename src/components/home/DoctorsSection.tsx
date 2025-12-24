@@ -13,7 +13,7 @@ export default function DoctorsSection() {
 
   return (
     <section className="section-padding bg-[#FFFFF0]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Perawatan Ahli"
           title="Kenali Spesialis Kami"

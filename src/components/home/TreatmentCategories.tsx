@@ -56,7 +56,7 @@ const categories = [
 export default function TreatmentCategories() {
   return (
     <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Layanan Kami"
           title="Kategori Perawatan"

@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 
 export default function CTASection() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative section-padding overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]" />
 
@@ -33,7 +33,7 @@ export default function CTASection() {
         <Sparkles className="w-16 h-16" />
       </motion.div>
 
-      <div className="relative max-w-4xl mx-auto px-4 text-center">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

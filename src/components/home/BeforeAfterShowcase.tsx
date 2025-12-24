@@ -37,7 +37,7 @@ const transformations = [
 export default function BeforeAfterShowcase() {
   return (
     <section className="section-padding bg-[#2C2C2C]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Hasil Nyata"
           title="Transformasi yang Berbicara"
