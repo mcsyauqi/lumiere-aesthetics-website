@@ -7,96 +7,96 @@ import { Calendar, Clock, ArrowRight, Search, Tag } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const categories = [
-  "All",
-  "Skincare Tips",
-  "Treatment Guides",
+  "Semua",
+  "Tips Skincare",
+  "Panduan Perawatan",
   "Anti-Aging",
-  "Lifestyle",
-  "News",
+  "Gaya Hidup",
+  "Berita",
 ];
 
 const blogPosts = [
   {
     id: 1,
-    slug: "ultimate-guide-to-hydrafacial",
-    title: "The Ultimate Guide to HydraFacial: Everything You Need to Know",
+    slug: "panduan-lengkap-hydrafacial",
+    title: "Panduan Lengkap HydraFacial: Semua yang Perlu Anda Ketahui",
     excerpt:
-      "Discover why HydraFacial has become the most popular facial treatment worldwide and what makes it so effective for all skin types.",
-    category: "Treatment Guides",
+      "Temukan mengapa HydraFacial menjadi perawatan wajah paling populer di dunia dan apa yang membuatnya efektif untuk semua jenis kulit.",
+    category: "Panduan Perawatan",
     author: "Dr. Sophia Laurent",
-    date: "December 20, 2024",
-    readTime: "8 min read",
+    date: "20 Desember 2024",
+    readTime: "8 menit baca",
     featured: true,
   },
   {
     id: 2,
-    slug: "winter-skincare-routine",
-    title: "Your Winter Skincare Routine: Protect Your Glow",
+    slug: "rutinitas-skincare-musim-hujan",
+    title: "Rutinitas Skincare Musim Hujan: Lindungi Kilau Kulit Anda",
     excerpt:
-      "Cold weather can wreak havoc on your skin. Learn how to adjust your skincare routine to maintain radiant, hydrated skin all winter long.",
-    category: "Skincare Tips",
+      "Cuaca lembab dapat mempengaruhi kondisi kulit. Pelajari cara menyesuaikan rutinitas skincare untuk menjaga kulit tetap sehat dan bercahaya.",
+    category: "Tips Skincare",
     author: "Dr. Elena Rodriguez",
-    date: "December 15, 2024",
-    readTime: "6 min read",
+    date: "15 Desember 2024",
+    readTime: "6 menit baca",
     featured: false,
   },
   {
     id: 3,
-    slug: "botox-myths-debunked",
-    title: "Botox Myths Debunked: Separating Fact from Fiction",
+    slug: "mitos-botox-terbongkar",
+    title: "Mitos Botox Terbongkar: Memisahkan Fakta dari Fiksi",
     excerpt:
-      "There are many misconceptions about Botox. We're breaking down the most common myths and sharing the science behind this popular treatment.",
-    category: "Treatment Guides",
+      "Banyak kesalahpahaman tentang Botox. Kami mengurai mitos paling umum dan membagikan ilmu di balik perawatan populer ini.",
+    category: "Panduan Perawatan",
     author: "Dr. James Chen",
-    date: "December 10, 2024",
-    readTime: "7 min read",
+    date: "10 Desember 2024",
+    readTime: "7 menit baca",
     featured: true,
   },
   {
     id: 4,
-    slug: "anti-aging-in-your-30s",
-    title: "Anti-Aging in Your 30s: Preventative Treatments That Work",
+    slug: "anti-aging-di-usia-30an",
+    title: "Anti-Aging di Usia 30-an: Perawatan Pencegahan yang Efektif",
     excerpt:
-      "Your 30s are the perfect time to start preventative anti-aging treatments. Here's what our dermatologists recommend.",
+      "Usia 30-an adalah waktu yang tepat untuk memulai perawatan anti-aging preventif. Inilah rekomendasi dari dermatolog kami.",
     category: "Anti-Aging",
     author: "Dr. Sophia Laurent",
-    date: "December 5, 2024",
-    readTime: "5 min read",
+    date: "5 Desember 2024",
+    readTime: "5 menit baca",
     featured: false,
   },
   {
     id: 5,
-    slug: "ingredients-to-look-for",
-    title: "5 Skincare Ingredients Every Woman Should Know About",
+    slug: "bahan-skincare-wajib-diketahui",
+    title: "5 Bahan Skincare yang Wajib Diketahui Setiap Wanita",
     excerpt:
-      "From retinol to hyaluronic acid, learn about the powerhouse ingredients that can transform your skincare routine.",
-    category: "Skincare Tips",
+      "Dari retinol hingga hyaluronic acid, pelajari bahan-bahan powerhouse yang dapat mengubah rutinitas skincare Anda.",
+    category: "Tips Skincare",
     author: "Dr. Elena Rodriguez",
-    date: "November 28, 2024",
-    readTime: "6 min read",
+    date: "28 November 2024",
+    readTime: "6 menit baca",
     featured: false,
   },
   {
     id: 6,
-    slug: "bridal-glow-prep",
-    title: "Bridal Beauty: Your 6-Month Glow-Up Timeline",
+    slug: "persiapan-kecantikan-pengantin",
+    title: "Kecantikan Pengantin: Timeline Persiapan 6 Bulan",
     excerpt:
-      "Planning your wedding? Here's the perfect treatment timeline to ensure you're glowing on your big day.",
-    category: "Lifestyle",
+      "Merencanakan pernikahan? Inilah timeline perawatan sempurna untuk memastikan Anda bersinar di hari besar.",
+    category: "Gaya Hidup",
     author: "Dr. Sophia Laurent",
-    date: "November 20, 2024",
-    readTime: "9 min read",
+    date: "20 November 2024",
+    readTime: "9 menit baca",
     featured: false,
   },
 ];
 
 export default function BlogPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredPosts = blogPosts.filter((post) => {
     const matchesCategory =
-      activeCategory === "All" || post.category === activeCategory;
+      activeCategory === "Semua" || post.category === activeCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
@@ -109,20 +109,20 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#FFFFF0]">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#D4A5A5]/20 to-[#B76E79]/10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block text-sm font-semibold tracking-wider uppercase text-[#B76E79] mb-4">
-              Our Blog
+              Blog Kami
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#2C2C2C] mb-6">
-              Beauty & Wellness Insights
+              Insight Kecantikan & Kesehatan
             </h1>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-              Expert advice, skincare tips, and the latest in aesthetic medicine
-              from our board-certified specialists.
+              Saran ahli, tips skincare, dan informasi terbaru dalam kedokteran
+              estetika dari spesialis bersertifikat kami.
             </p>
           </motion.div>
         </div>
@@ -130,14 +130,14 @@ export default function BlogPage() {
 
       {/* Search & Filter */}
       <section className="sticky top-20 z-40 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2C2C2C]/40" />
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Cari artikel..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 pr-4 py-2 rounded-full border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79] w-full md:w-64"
@@ -166,11 +166,11 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Posts */}
-      {activeCategory === "All" && searchQuery === "" && (
+      {activeCategory === "Semua" && searchQuery === "" && (
         <section className="section-padding bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-display font-bold text-[#2C2C2C] mb-8">
-              Featured Articles
+              Artikel Pilihan
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featuredPosts.map((post, index) => (
@@ -218,15 +218,15 @@ export default function BlogPage() {
 
       {/* All Posts */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-display font-bold text-[#2C2C2C] mb-8">
-            {activeCategory === "All" ? "Latest Articles" : activeCategory}
+            {activeCategory === "Semua" ? "Artikel Terbaru" : activeCategory}
           </h2>
 
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-[#2C2C2C]/60">
-                No articles found matching your criteria.
+                Tidak ada artikel ditemukan sesuai kriteria Anda.
               </p>
             </div>
           ) : (
@@ -259,7 +259,7 @@ export default function BlogPage() {
                           <span>{post.readTime}</span>
                         </div>
                         <div className="mt-4 flex items-center gap-1 text-sm text-[#B76E79] font-medium group-hover:gap-2 transition-all">
-                          Read More
+                          Baca Selengkapnya
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -273,26 +273,26 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="section-padding bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-display font-bold text-white mb-4">
-            Subscribe to Our Newsletter
+            Berlangganan Newsletter Kami
           </h2>
           <p className="text-white/90 mb-8">
-            Get the latest skincare tips, exclusive offers, and beauty insights
-            delivered to your inbox.
+            Dapatkan tips skincare terbaru, penawaran eksklusif, dan insight
+            kecantikan langsung ke inbox Anda.
           </p>
           <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Masukkan email Anda"
               className="flex-1 px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white"
             />
             <button
               type="submit"
               className="bg-[#2C2C2C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#404040] transition-colors"
             >
-              Subscribe
+              Berlangganan
             </button>
           </form>
         </div>
