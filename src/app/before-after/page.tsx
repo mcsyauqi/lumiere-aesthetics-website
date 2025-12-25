@@ -1,92 +1,119 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, Grid, List } from "lucide-react";
+import { Filter, Grid, List, Star, Shield, Award } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import Button from "@/components/ui/Button";
 
 const categories = [
-  "All",
-  "Facial Rejuvenation",
-  "Injectables",
-  "Laser Therapy",
-  "Body Contouring",
-  "Skin Treatments",
+  "Semua",
+  "Peremajaan Wajah",
+  "Suntik Estetika",
+  "Terapi Laser",
+  "Pembentukan Tubuh",
+  "Perawatan Kulit",
 ];
 
 const results = [
   {
     id: 1,
-    category: "Facial Rejuvenation",
+    category: "Peremajaan Wajah",
     treatment: "HydraFacial Series",
-    sessions: "6 sessions",
-    description: "Dramatic improvement in skin texture, tone, and hydration.",
+    sessions: "6 sesi",
+    description: "Perbaikan dramatis pada tekstur, warna, dan hidrasi kulit.",
+    beforeImage: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 2,
-    category: "Injectables",
+    category: "Suntik Estetika",
     treatment: "Botox & Fillers",
-    sessions: "3 sessions",
-    description: "Natural-looking reduction of fine lines and volume restoration.",
+    sessions: "3 sesi",
+    description: "Pengurangan garis halus dan restorasi volume yang natural.",
+    beforeImage: "https://images.unsplash.com/photo-1522849696084-818b29dfe210?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 3,
-    category: "Laser Therapy",
+    category: "Terapi Laser",
     treatment: "Laser Resurfacing",
-    sessions: "2 sessions",
-    description: "Significant reduction in acne scars and uneven skin tone.",
+    sessions: "2 sesi",
+    description: "Pengurangan signifikan bekas jerawat dan warna kulit tidak merata.",
+    beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 4,
-    category: "Injectables",
+    category: "Suntik Estetika",
     treatment: "Lip Enhancement",
-    sessions: "1 session",
-    description: "Natural-looking volume and definition enhancement.",
+    sessions: "1 sesi",
+    description: "Volume dan definisi bibir yang natural.",
+    beforeImage: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 5,
-    category: "Body Contouring",
+    category: "Pembentukan Tubuh",
     treatment: "CoolSculpting",
-    sessions: "2 sessions",
-    description: "Visible fat reduction in stubborn areas.",
+    sessions: "2 sesi",
+    description: "Pengurangan lemak yang terlihat di area membandel.",
+    beforeImage: "https://images.unsplash.com/photo-1522849696084-818b29dfe210?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 6,
-    category: "Skin Treatments",
-    treatment: "Acne Treatment",
-    sessions: "4 sessions",
-    description: "Clear, healthy skin with reduced breakouts.",
+    category: "Perawatan Kulit",
+    treatment: "Perawatan Jerawat",
+    sessions: "4 sesi",
+    description: "Kulit bersih dan sehat dengan breakout yang berkurang.",
+    beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 7,
-    category: "Facial Rejuvenation",
-    treatment: "Microneedling with PRP",
-    sessions: "4 sessions",
-    description: "Improved skin texture and reduced fine lines.",
+    category: "Peremajaan Wajah",
+    treatment: "Microneedling + PRP",
+    sessions: "4 sesi",
+    description: "Perbaikan tekstur kulit dan pengurangan garis halus.",
+    beforeImage: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 8,
-    category: "Laser Therapy",
+    category: "Terapi Laser",
     treatment: "IPL Treatment",
-    sessions: "3 sessions",
-    description: "Reduced pigmentation and sun damage.",
+    sessions: "3 sesi",
+    description: "Pengurangan pigmentasi dan kerusakan akibat sinar matahari.",
+    beforeImage: "https://images.unsplash.com/photo-1522849696084-818b29dfe210?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&q=80",
   },
   {
     id: 9,
-    category: "Injectables",
+    category: "Suntik Estetika",
     treatment: "Kybella",
-    sessions: "2 sessions",
-    description: "Defined jawline with reduced submental fat.",
+    sessions: "2 sesi",
+    description: "Garis rahang yang tegas dengan pengurangan lemak dagu.",
+    beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=800&fit=crop&q=80",
+    afterImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop&q=80",
   },
 ];
 
+const stats = [
+  { icon: Star, value: "98%", label: "Kepuasan Klien" },
+  { icon: Shield, value: "10.000+", label: "Perawatan Sukses" },
+  { icon: Award, value: "15+", label: "Tahun Pengalaman" },
+];
+
 export default function BeforeAfterPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const filteredResults =
-    activeCategory === "All"
+    activeCategory === "Semua"
       ? results
       : results.filter((r) => r.category === activeCategory);
 
@@ -94,29 +121,39 @@ export default function BeforeAfterPage() {
     <div className="min-h-screen bg-[#FFFFF0]">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#2C2C2C] to-[#404040]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block text-sm font-semibold tracking-wider uppercase text-[#D4A5A5] mb-4">
-              Real Results
+              Hasil Nyata
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-              Before & After Gallery
+              Galeri Sebelum & Sesudah
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              See the transformative results our patients have achieved. Every
-              transformation is unique and reflects our commitment to
-              natural-looking outcomes.
+            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+              Lihat hasil transformasi luar biasa yang dicapai klien kami. Setiap
+              transformasi unik dan mencerminkan komitmen kami untuk hasil yang natural.
             </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-12">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <stat.icon className="w-8 h-8 text-[#D4A5A5] mx-auto mb-2" />
+                  <p className="text-3xl font-bold text-white">{stat.value}</p>
+                  <p className="text-sm text-white/60">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Filter Section */}
       <section className="sticky top-20 z-40 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             {/* Category Filters */}
             <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
@@ -145,7 +182,7 @@ export default function BeforeAfterPage() {
                     ? "bg-[#B76E79] text-white"
                     : "bg-[#FFFFF0] text-[#2C2C2C]"
                 }`}
-                aria-label="Grid view"
+                aria-label="Tampilan grid"
               >
                 <Grid className="w-5 h-5" />
               </button>
@@ -156,7 +193,7 @@ export default function BeforeAfterPage() {
                     ? "bg-[#B76E79] text-white"
                     : "bg-[#FFFFF0] text-[#2C2C2C]"
                 }`}
-                aria-label="List view"
+                aria-label="Tampilan list"
               >
                 <List className="w-5 h-5" />
               </button>
@@ -167,7 +204,7 @@ export default function BeforeAfterPage() {
 
       {/* Results Gallery */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -191,6 +228,8 @@ export default function BeforeAfterPage() {
                   <BeforeAfterSlider
                     treatmentName={result.treatment}
                     sessions={result.sessions}
+                    beforeImage={result.beforeImage}
+                    afterImage={result.afterImage}
                   />
                   <div className="mt-4">
                     <span className="text-sm text-[#B76E79] font-medium">
@@ -208,41 +247,87 @@ export default function BeforeAfterPage() {
           {filteredResults.length === 0 && (
             <div className="text-center py-20">
               <p className="text-[#2C2C2C]/60">
-                No results found for this category.
+                Tidak ada hasil ditemukan untuk kategori ini.
               </p>
             </div>
           )}
         </div>
       </section>
 
+      {/* Trust Section */}
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            subtitle="Komitmen Kami"
+            title="Hasil yang Dapat Dipercaya"
+            description="Semua foto adalah hasil nyata dari klien kami dengan persetujuan mereka."
+          />
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Foto Asli",
+                description: "Semua foto adalah hasil nyata tanpa manipulasi digital yang berlebihan.",
+              },
+              {
+                title: "Dengan Persetujuan",
+                description: "Setiap foto ditampilkan dengan izin tertulis dari klien kami.",
+              },
+              {
+                title: "Hasil Bervariasi",
+                description: "Hasil individual dapat berbeda tergantung kondisi dan respons tubuh.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center p-6 bg-[#FFFFF0] rounded-2xl"
+              >
+                <div className="w-12 h-12 bg-[#9DC183] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-[#2C2C2C] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#2C2C2C]/70">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="py-8 bg-[#2C2C2C]/5">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-[#2C2C2C]/60">
-            <strong>Disclaimer:</strong> Individual results may vary. The images
-            shown are representative of typical results but are not a guarantee.
-            Consultation with our medical team is required to determine the best
-            treatment plan for your unique needs.
+            <strong>Disclaimer:</strong> Hasil individual dapat bervariasi. Gambar yang
+            ditampilkan adalah representasi hasil tipikal namun bukan jaminan.
+            Konsultasi dengan tim medis kami diperlukan untuk menentukan rencana
+            perawatan terbaik untuk kebutuhan unik Anda.
           </p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="section-padding bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-display font-bold text-white mb-4">
-            Start Your Transformation Today
+            Mulai Transformasi Anda Hari Ini
           </h2>
           <p className="text-white/90 mb-8">
-            Book a consultation to discuss how we can help you achieve your
-            aesthetic goals.
+            Reservasi konsultasi untuk mendiskusikan bagaimana kami dapat membantu
+            Anda mencapai tujuan estetika Anda.
           </p>
-          <a
-            href="/booking"
-            className="inline-block bg-white text-[#B76E79] px-8 py-4 rounded-full font-semibold hover:bg-[#FFFFF0] transition-colors"
-          >
-            Book Your Consultation
-          </a>
+          <Link href="/booking">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="!bg-white !text-[#B76E79] hover:!bg-[#FFFFF0]"
+            >
+              Reservasi Konsultasi
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

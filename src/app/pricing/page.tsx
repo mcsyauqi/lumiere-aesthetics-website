@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   CheckCircle,
@@ -9,25 +10,27 @@ import {
   Calculator,
   ChevronDown,
   ChevronUp,
+  Gift,
+  CreditCard,
+  Shield,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import { treatments } from "@/data/treatments";
-import { formatPrice, calculateEMI } from "@/lib/utils";
 
 const packages = [
   {
     id: "essential",
     name: "Essential Glow",
-    description: "Perfect introduction to aesthetic treatments",
-    price: 999,
-    originalPrice: 1200,
+    description: "Pengenalan sempurna untuk perawatan estetika",
+    price: 2500000,
+    originalPrice: 3500000,
     includes: [
-      "Initial Consultation",
-      "2 HydraFacial Sessions",
+      "Konsultasi Awal",
+      "2 Sesi HydraFacial",
       "1 Chemical Peel",
-      "Personalized Skincare Plan",
-      "10% off future treatments",
+      "Rencana Skincare Personal",
+      "Diskon 10% perawatan selanjutnya",
     ],
     popular: false,
     color: "from-[#D4A5A5] to-[#B76E79]",
@@ -35,17 +38,17 @@ const packages = [
   {
     id: "radiance",
     name: "Radiance Package",
-    description: "Comprehensive rejuvenation for lasting results",
-    price: 2499,
-    originalPrice: 3200,
+    description: "Peremajaan komprehensif untuk hasil maksimal",
+    price: 6500000,
+    originalPrice: 8500000,
     includes: [
-      "Full Consultation & Assessment",
-      "4 HydraFacial Sessions",
-      "2 Microneedling Sessions",
-      "1 Botox Treatment Area",
-      "Premium Skincare Kit",
-      "15% off future treatments",
-      "Priority Booking",
+      "Konsultasi & Penilaian Lengkap",
+      "4 Sesi HydraFacial",
+      "2 Sesi Microneedling",
+      "1 Area Botox",
+      "Kit Skincare Premium",
+      "Diskon 15% perawatan selanjutnya",
+      "Booking Prioritas",
     ],
     popular: true,
     color: "from-[#C9B037] to-[#A69028]",
@@ -53,18 +56,18 @@ const packages = [
   {
     id: "transformation",
     name: "Total Transformation",
-    description: "Our most comprehensive beauty experience",
-    price: 4999,
-    originalPrice: 6500,
+    description: "Pengalaman kecantikan paling lengkap",
+    price: 15000000,
+    originalPrice: 20000000,
     includes: [
-      "Executive Consultation",
-      "6 HydraFacial Sessions",
-      "4 Microneedling + PRP Sessions",
-      "Full Botox Treatment",
+      "Konsultasi Executive",
+      "6 Sesi HydraFacial",
+      "4 Sesi Microneedling + PRP",
+      "Botox Full Treatment",
       "Dermal Filler (1 Syringe)",
       "Laser Skin Rejuvenation",
-      "Luxury Skincare Kit",
-      "20% off future treatments",
+      "Kit Skincare Luxury",
+      "Diskon 20% perawatan selanjutnya",
       "VIP Concierge Service",
     ],
     popular: false,
@@ -72,14 +75,37 @@ const packages = [
   },
 ];
 
+const formatRupiah = (amount: number) => {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+
+const benefits = [
+  {
+    icon: Gift,
+    title: "Promo Spesial",
+    description: "Dapatkan penawaran eksklusif untuk member baru",
+  },
+  {
+    icon: CreditCard,
+    title: "Cicilan 0%",
+    description: "Bayar dengan cicilan tanpa bunga hingga 12 bulan",
+  },
+  {
+    icon: Shield,
+    title: "Garansi Hasil",
+    description: "Jaminan kepuasan dengan free touch-up jika diperlukan",
+  },
+];
+
 export default function PricingPage() {
-  const [showEMI, setShowEMI] = useState(false);
-  const [emiAmount, setEmiAmount] = useState(2499);
+  const [emiAmount, setEmiAmount] = useState(6500000);
   const [emiMonths, setEmiMonths] = useState(12);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-
-  const interestRate = 0; // 0% interest for promotional financing
-  const monthlyEMI = calculateEMI(emiAmount, interestRate, emiMonths);
 
   const toggleCategory = (category: string) => {
     setExpandedCategories((prev) =>
@@ -98,43 +124,69 @@ export default function PricingPage() {
   }, {} as Record<string, typeof treatments>);
 
   const categoryNames: Record<string, string> = {
-    "facial-rejuvenation": "Facial Rejuvenation",
-    "body-contouring": "Body Contouring",
-    "skin-treatments": "Skin Treatments",
-    injectables: "Injectables",
-    "laser-therapy": "Laser Therapy",
+    "facial-rejuvenation": "Peremajaan Wajah",
+    "body-contouring": "Pembentukan Tubuh",
+    "skin-treatments": "Perawatan Kulit",
+    injectables: "Suntik Estetika",
+    "laser-therapy": "Terapi Laser",
   };
 
   return (
     <div className="min-h-screen bg-[#FFFFF0]">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#D4A5A5]/20 to-[#C9B037]/10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block text-sm font-semibold tracking-wider uppercase text-[#B76E79] mb-4">
-              Transparent Pricing
+              Harga Transparan
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#2C2C2C] mb-6">
-              Investment in You
+              Investasi untuk Kecantikan Anda
             </h1>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-              Explore our treatment packages and individual services. Financing
-              options available to make your transformation accessible.
+              Jelajahi paket perawatan dan layanan individual kami. Tersedia
+              opsi cicilan untuk mewujudkan transformasi impian Anda.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Benefits */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center gap-4 p-6 bg-[#FFFFF0] rounded-2xl"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B76E79] to-[#D4A5A5] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#2C2C2C]">{benefit.title}</h3>
+                  <p className="text-sm text-[#2C2C2C]/70">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Packages Section */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="section-padding bg-[#FFFFF0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            subtitle="Value Packages"
-            title="Signature Treatment Packages"
-            description="Save with our curated packages designed for comprehensive results."
+            subtitle="Paket Hemat"
+            title="Paket Perawatan Signature"
+            description="Hemat lebih banyak dengan paket pilihan yang dirancang untuk hasil komprehensif."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -150,9 +202,9 @@ export default function PricingPage() {
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-[#C9B037] text-white px-4 py-1 text-sm font-semibold rounded-bl-xl flex items-center gap-1">
+                  <div className="absolute top-0 right-0 bg-[#C9B037] text-white px-4 py-1 text-sm font-semibold rounded-bl-xl flex items-center gap-1 z-10">
                     <Crown className="w-4 h-4" />
-                    Most Popular
+                    Paling Populer
                   </div>
                 )}
 
@@ -162,21 +214,21 @@ export default function PricingPage() {
                   </h3>
                   <p className="text-white/80 text-sm mb-4">{pkg.description}</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold">
-                      {formatPrice(pkg.price)}
-                    </span>
-                    <span className="text-white/60 line-through">
-                      {formatPrice(pkg.originalPrice)}
+                    <span className="text-3xl font-bold">
+                      {formatRupiah(pkg.price)}
                     </span>
                   </div>
+                  <p className="text-white/60 line-through text-sm">
+                    {formatRupiah(pkg.originalPrice)}
+                  </p>
                   <p className="text-sm text-white/80 mt-1">
-                    Save {formatPrice(pkg.originalPrice - pkg.price)}
+                    Hemat {formatRupiah(pkg.originalPrice - pkg.price)}
                   </p>
                 </div>
 
                 <div className="bg-white p-6">
                   <h4 className="font-semibold text-[#2C2C2C] mb-4">
-                    Package Includes:
+                    Termasuk:
                   </h4>
                   <ul className="space-y-3 mb-6">
                     {pkg.includes.map((item) => (
@@ -189,7 +241,9 @@ export default function PricingPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full">Choose Package</Button>
+                  <Link href="/booking">
+                    <Button className="w-full">Pilih Paket</Button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -199,15 +253,14 @@ export default function PricingPage() {
 
       {/* EMI Calculator */}
       <section className="section-padding bg-[#2C2C2C]">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Calculator className="w-12 h-12 text-[#D4A5A5] mx-auto mb-4" />
             <h2 className="text-3xl font-display font-bold text-white mb-4">
-              Payment Calculator
+              Kalkulator Cicilan
             </h2>
             <p className="text-white/70">
-              Make your transformation affordable with our 0% interest financing
-              options.
+              Wujudkan transformasi impian dengan cicilan 0% tanpa bunga.
             </p>
           </div>
 
@@ -215,32 +268,32 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                  Treatment Amount
+                  Jumlah Perawatan
                 </label>
                 <input
                   type="range"
-                  min="500"
-                  max="10000"
-                  step="100"
+                  min="1000000"
+                  max="25000000"
+                  step="500000"
                   value={emiAmount}
                   onChange={(e) => setEmiAmount(Number(e.target.value))}
                   className="w-full accent-[#B76E79]"
                 />
                 <div className="flex justify-between text-sm text-[#2C2C2C]/60 mt-1">
-                  <span>$500</span>
+                  <span>Rp 1 Jt</span>
                   <span className="font-bold text-[#B76E79] text-lg">
-                    {formatPrice(emiAmount)}
+                    {formatRupiah(emiAmount)}
                   </span>
-                  <span>$10,000</span>
+                  <span>Rp 25 Jt</span>
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                  Payment Duration
+                  Durasi Cicilan
                 </label>
                 <div className="flex gap-2">
-                  {[3, 6, 12, 24].map((months) => (
+                  {[3, 6, 12].map((months) => (
                     <button
                       key={months}
                       onClick={() => setEmiMonths(months)}
@@ -250,7 +303,7 @@ export default function PricingPage() {
                           : "bg-[#FFFFF0] text-[#2C2C2C] hover:bg-[#D4A5A5]/20"
                       }`}
                     >
-                      {months} mo
+                      {months} bulan
                     </button>
                   ))}
                 </div>
@@ -259,14 +312,14 @@ export default function PricingPage() {
 
             <div className="mt-8 p-6 bg-[#FFFFF0] rounded-2xl text-center">
               <p className="text-sm text-[#2C2C2C]/60 mb-2">
-                Your Estimated Monthly Payment
+                Estimasi Cicilan Bulanan Anda
               </p>
               <p className="text-5xl font-bold text-[#B76E79]">
-                {formatPrice(Math.round(emiAmount / emiMonths))}
-                <span className="text-lg text-[#2C2C2C]/60">/month</span>
+                {formatRupiah(Math.round(emiAmount / emiMonths))}
+                <span className="text-lg text-[#2C2C2C]/60">/bulan</span>
               </p>
               <p className="text-sm text-[#9DC183] mt-2">
-                0% Interest &bull; No Hidden Fees
+                Bunga 0% &bull; Tanpa Biaya Tersembunyi
               </p>
             </div>
           </div>
@@ -274,23 +327,23 @@ export default function PricingPage() {
       </section>
 
       {/* Individual Treatments */}
-      <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             subtitle="A La Carte"
-            title="Individual Treatment Pricing"
-            description="View pricing for individual treatments. Prices may vary based on treatment area and individual needs."
+            title="Harga Perawatan Individual"
+            description="Lihat harga untuk perawatan satuan. Harga dapat bervariasi berdasarkan area perawatan dan kebutuhan individual."
           />
 
           <div className="space-y-4">
             {Object.entries(treatmentsByCategory).map(([category, items]) => (
               <div
                 key={category}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm"
+                className="bg-[#FFFFF0] rounded-2xl overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => toggleCategory(category)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#FFFFF0] transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#D4A5A5]/10 transition-colors"
                 >
                   <h3 className="text-xl font-display font-semibold text-[#2C2C2C]">
                     {categoryNames[category]}
@@ -321,10 +374,10 @@ export default function PricingPage() {
                           <div className="text-right">
                             <p className="font-bold text-[#B76E79]">
                               {treatment.priceRange ||
-                                `From ${formatPrice(treatment.price)}`}
+                                `Mulai ${formatRupiah(treatment.price * 15000)}`}
                             </p>
                             <p className="text-xs text-[#2C2C2C]/60">
-                              per session
+                              per sesi
                             </p>
                           </div>
                         </div>
@@ -339,21 +392,24 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="section-padding bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-display font-bold text-white mb-4">
-            Questions About Pricing?
+            Ada Pertanyaan Tentang Harga?
           </h2>
           <p className="text-white/90 mb-8">
-            Schedule a complimentary consultation to discuss your treatment plan
-            and payment options.
+            Jadwalkan konsultasi gratis untuk mendiskusikan rencana perawatan
+            dan opsi pembayaran yang sesuai untuk Anda.
           </p>
-          <a
-            href="/booking"
-            className="inline-block bg-white text-[#B76E79] px-8 py-4 rounded-full font-semibold hover:bg-[#FFFFF0] transition-colors"
-          >
-            Book Free Consultation
-          </a>
+          <Link href="/booking">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="!bg-white !text-[#B76E79] hover:!bg-[#FFFFF0]"
+            >
+              Reservasi Konsultasi Gratis
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -10,6 +12,8 @@ import {
   Send,
   MessageCircle,
   CheckCircle,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 
@@ -25,7 +29,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     setIsSubmitted(true);
   };
 
@@ -44,20 +47,20 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[#FFFFF0]">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#D4A5A5]/20 to-[#B76E79]/10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block text-sm font-semibold tracking-wider uppercase text-[#B76E79] mb-4">
-              Get in Touch
+              Hubungi Kami
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#2C2C2C] mb-6">
-              Contact Us
+              Kontak
             </h1>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-              Have questions? We&apos;d love to hear from you. Send us a message and
-              we&apos;ll respond as soon as possible.
+              Ada pertanyaan? Kami senang mendengar dari Anda. Kirim pesan dan
+              kami akan merespons secepat mungkin.
             </p>
           </motion.div>
         </div>
@@ -65,7 +68,7 @@ export default function ContactPage() {
 
       {/* Contact Content */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <motion.div
@@ -73,7 +76,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
             >
               <h2 className="text-3xl font-display font-bold text-[#2C2C2C] mb-8">
-                Visit Our Clinic
+                Kunjungi Klinik Kami
               </h2>
 
               <div className="space-y-6 mb-12">
@@ -83,12 +86,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#2C2C2C] mb-1">
-                      Address
+                      Alamat
                     </h3>
                     <p className="text-[#2C2C2C]/70">
-                      123 Aesthetic Avenue, Suite 500
+                      Jl. Kemang Raya No. 123
                       <br />
-                      Beverly Hills, CA 90210
+                      Jakarta Selatan, 12730
                     </p>
                     <a
                       href="https://maps.google.com"
@@ -96,7 +99,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-[#B76E79] text-sm font-medium mt-2 inline-block hover:underline"
                     >
-                      Get Directions →
+                      Lihat di Maps →
                     </a>
                   </div>
                 </div>
@@ -106,12 +109,12 @@ export default function ContactPage() {
                     <Phone className="w-6 h-6 text-[#B76E79]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2C2C2C] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#2C2C2C] mb-1">Telepon</h3>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+6281234567890"
                       className="text-[#2C2C2C]/70 hover:text-[#B76E79] transition-colors"
                     >
-                      (123) 456-7890
+                      +62 812-3456-7890
                     </a>
                   </div>
                 </div>
@@ -136,25 +139,55 @@ export default function ContactPage() {
                     <Clock className="w-6 h-6 text-[#B76E79]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2C2C2C] mb-1">Hours</h3>
+                    <h3 className="font-semibold text-[#2C2C2C] mb-1">Jam Operasional</h3>
                     <div className="text-[#2C2C2C]/70 space-y-1">
-                      <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p>Saturday: 9:00 AM - 5:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Senin - Jumat: 09:00 - 19:00</p>
+                      <p>Sabtu: 09:00 - 17:00</p>
+                      <p>Minggu: Tutup</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Map Placeholder */}
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#D4A5A5]/20 to-[#9DC183]/20 flex items-center justify-center overflow-hidden shadow-lg">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-[#B76E79]/40 mx-auto mb-2" />
-                  <p className="text-[#2C2C2C]/60">Interactive Map</p>
-                  <p className="text-sm text-[#2C2C2C]/40">
-                    Beverly Hills, CA 90210
-                  </p>
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-lg relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=450&fit=crop&q=80"
+                  alt="Lokasi Lumière Aesthetics"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/60 to-transparent flex items-end justify-center pb-6">
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-[#B76E79] px-6 py-3 rounded-full font-semibold hover:bg-[#FFFFF0] transition-colors"
+                  >
+                    Buka di Google Maps
+                  </a>
                 </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="mt-8 flex items-center gap-4">
+                <span className="text-[#2C2C2C]/70">Ikuti kami:</span>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#D4A5A5]/20 rounded-full flex items-center justify-center text-[#B76E79] hover:bg-[#B76E79] hover:text-white transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#D4A5A5]/20 rounded-full flex items-center justify-center text-[#B76E79] hover:bg-[#B76E79] hover:text-white transition-all"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
               </div>
 
               {/* WhatsApp */}
@@ -163,18 +196,18 @@ export default function ContactPage() {
                   <MessageCircle className="w-10 h-10 text-[#25D366]" />
                   <div>
                     <h3 className="font-semibold text-[#2C2C2C]">
-                      WhatsApp Chat
+                      Chat WhatsApp
                     </h3>
                     <p className="text-sm text-[#2C2C2C]/70 mb-2">
-                      Get instant answers to your questions
+                      Dapatkan jawaban instan untuk pertanyaan Anda
                     </p>
                     <a
-                      href="https://wa.me/1234567890"
+                      href="https://wa.me/6281234567890"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#25D366] font-medium text-sm hover:underline"
                     >
-                      Start Chat →
+                      Mulai Chat →
                     </a>
                   </div>
                 </div>
@@ -193,26 +226,26 @@ export default function ContactPage() {
                       <CheckCircle className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-[#2C2C2C] mb-4">
-                      Message Sent!
+                      Pesan Terkirim!
                     </h3>
                     <p className="text-[#2C2C2C]/70 mb-6">
-                      Thank you for reaching out. We&apos;ll get back to you within
-                      24 hours.
+                      Terima kasih telah menghubungi kami. Kami akan membalas dalam
+                      24 jam.
                     </p>
                     <Button onClick={() => setIsSubmitted(false)}>
-                      Send Another Message
+                      Kirim Pesan Lain
                     </Button>
                   </div>
                 ) : (
                   <>
                     <h2 className="text-2xl font-display font-bold text-[#2C2C2C] mb-6">
-                      Send a Message
+                      Kirim Pesan
                     </h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                            Your Name
+                            Nama Lengkap
                           </label>
                           <input
                             type="text"
@@ -221,12 +254,12 @@ export default function ContactPage() {
                             onChange={handleInputChange}
                             required
                             className="w-full px-4 py-3 rounded-xl border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79]"
-                            placeholder="Jane Doe"
+                            placeholder="Nama Anda"
                           />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                            Email Address
+                            Email
                           </label>
                           <input
                             type="email"
@@ -235,7 +268,7 @@ export default function ContactPage() {
                             onChange={handleInputChange}
                             required
                             className="w-full px-4 py-3 rounded-xl border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79]"
-                            placeholder="jane@example.com"
+                            placeholder="email@contoh.com"
                           />
                         </div>
                       </div>
@@ -243,7 +276,7 @@ export default function ContactPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                            Phone Number
+                            No. Telepon
                           </label>
                           <input
                             type="tel"
@@ -251,12 +284,12 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={handleInputChange}
                             className="w-full px-4 py-3 rounded-xl border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79]"
-                            placeholder="(123) 456-7890"
+                            placeholder="0812-3456-7890"
                           />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                            Subject
+                            Subjek
                           </label>
                           <select
                             name="subject"
@@ -265,21 +298,21 @@ export default function ContactPage() {
                             required
                             className="w-full px-4 py-3 rounded-xl border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79]"
                           >
-                            <option value="">Select a topic...</option>
+                            <option value="">Pilih topik...</option>
                             <option value="consultation">
-                              Book a Consultation
+                              Reservasi Konsultasi
                             </option>
-                            <option value="treatment">Treatment Inquiry</option>
-                            <option value="pricing">Pricing Question</option>
+                            <option value="treatment">Tanya Perawatan</option>
+                            <option value="pricing">Tanya Harga</option>
                             <option value="feedback">Feedback</option>
-                            <option value="other">Other</option>
+                            <option value="other">Lainnya</option>
                           </select>
                         </div>
                       </div>
 
                       <div>
                         <label className="block text-sm font-medium text-[#2C2C2C] mb-2">
-                          Your Message
+                          Pesan Anda
                         </label>
                         <textarea
                           name="message"
@@ -288,13 +321,13 @@ export default function ContactPage() {
                           required
                           rows={5}
                           className="w-full px-4 py-3 rounded-xl border border-[#D4A5A5]/30 focus:outline-none focus:ring-2 focus:ring-[#B76E79]"
-                          placeholder="How can we help you?"
+                          placeholder="Apa yang bisa kami bantu?"
                         />
                       </div>
 
                       <Button type="submit" className="w-full">
                         <Send className="w-4 h-4 mr-2" />
-                        Send Message
+                        Kirim Pesan
                       </Button>
                     </form>
                   </>
@@ -307,33 +340,33 @@ export default function ContactPage() {
 
       {/* FAQ Section */}
       <section className="section-padding bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-[#2C2C2C] mb-4">
-              Frequently Asked Questions
+              Pertanyaan yang Sering Diajukan
             </h2>
             <p className="text-[#2C2C2C]/70">
-              Quick answers to common questions about visiting our clinic.
+              Jawaban cepat untuk pertanyaan umum tentang kunjungan ke klinik kami.
             </p>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                q: "Is parking available at your clinic?",
-                a: "Yes, we offer complimentary valet parking for all patients. Self-parking is also available in our building's underground garage.",
+                q: "Apakah tersedia parkir di klinik?",
+                a: "Ya, kami menyediakan area parkir gratis untuk semua klien. Parkir valet juga tersedia untuk kenyamanan Anda.",
               },
               {
-                q: "Do you accept insurance?",
-                a: "Most aesthetic treatments are considered elective and not covered by insurance. However, we offer flexible financing options and accept all major credit cards.",
+                q: "Apakah menerima BPJS atau asuransi?",
+                a: "Perawatan estetika umumnya tidak ditanggung asuransi. Namun, kami menawarkan opsi cicilan 0% dan menerima semua kartu kredit utama.",
               },
               {
-                q: "What should I bring to my first appointment?",
-                a: "Please bring a valid ID, any relevant medical records, a list of current medications, and photos of your desired results if applicable.",
+                q: "Apa yang harus dibawa saat kunjungan pertama?",
+                a: "Silakan bawa KTP, riwayat medis jika ada, daftar obat yang sedang dikonsumsi, dan foto hasil yang diinginkan jika memungkinkan.",
               },
               {
-                q: "Can I bring a friend or family member?",
-                a: "Absolutely! We welcome you to bring a support person to your consultation. However, for treatment appointments, we ask that companions wait in our reception area.",
+                q: "Bolehkah membawa teman atau keluarga?",
+                a: "Tentu! Kami menyambut Anda untuk membawa pendamping ke konsultasi. Namun untuk perawatan, pendamping diminta menunggu di ruang resepsi.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -349,6 +382,27 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-[#B76E79] to-[#D4A5A5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-display font-bold text-white mb-4">
+            Siap Memulai Perjalanan Kecantikan Anda?
+          </h2>
+          <p className="text-white/90 mb-8">
+            Jadwalkan konsultasi gratis dengan dokter spesialis kami hari ini.
+          </p>
+          <Link href="/booking">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="!bg-white !text-[#B76E79] hover:!bg-[#FFFFF0]"
+            >
+              Reservasi Konsultasi Gratis
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
